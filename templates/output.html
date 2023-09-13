@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+    <script>
+        function redirectToPage() {
+            // Redirect to another page within the Flask app
+            window.location.href = "/audio";
+        }
+    </script>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 mx-50 space-y-10">
+    <div class="text-center">
+        <p class="text-2xl font-bold mb-4">Music prompt generated for audio</p>
+        <p class="text-2xl mb-4">{{music_prompt}}</p>
+        <button class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600"
+            onclick="redirectToPage()">Download your AI
+            Generated music!</button>
+    </div>
+</body>
+
+</html>
