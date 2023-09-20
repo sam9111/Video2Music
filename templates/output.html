@@ -2,27 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
-    <script>
-        function redirectToPage() {
-            // Redirect to another page within the Flask app
-            window.location.href = "/audio";
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
 </head>
 
-<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 mx-50 space-y-10">
-    <div class="text-center">
-        <p class="text-2xl font-bold mb-4">Music prompt generated for audio</p>
-        <p class="text-2xl mb-4">{{music_prompt}}</p>
-        <button class="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600"
-            onclick="redirectToPage()">Download your AI
-            Generated music!</button>
+<body class="flex flex-col  max-h-screen p-8 mx-16 space-y-8 ">
+
+  <h1 class="text-4xl font-extrabold text-center">V2M - Auto generate music for your videos!</h1>
+  <blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+    <p class="text-md italic  leading-relaxed text-gray-900 dark:text-white">When you first upload a
+      short video, a description of your video is generated and then a music prompt suitable for your video is
+      generated. This is used to ultimately produce the final audio. You can change these as you like and regenerate
+      the music to your liking.</p>
+  </blockquote>
+
+  <div class="flex space-x-8" >
+    <!-- Left Video Input -->
+    <div class="flex w-1/2 flex-col space-y-8">
+       
+          <video id="video" controls autoplay src="{{ url_for('static', filename='combined_video.mp4') }}" ></video>
+          <audio id="audio" controls src="{{ url_for('static', filename='audio.wav') }}"></audio>
+      
+
+      <div class=" max-w-full">
+        <button type="button"
+          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Clear</button>
+        
+        <input type="submit" value="Generate Music"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2" />
+      </div>
+</div>
+
+    <!-- Right Video Input -->
+    <div class="w-1/2 flex flex-col space-y-8  ">
+
+      <div>
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video
+          Description</label>
+        <textarea id="message" rows="4"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Write your thoughts here..."> {{ descriptions }}</textarea>
+      </div>
+
+      <div>
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">AI Generated Music
+          Prompt</label>
+        <textarea id="message" rows="4"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Write your thoughts here..." > {{ music_prompt }} ></textarea>
+      </div>
+
+
+
     </div>
+      </form>
+  </div>
+
+  <script>
+
+</script>
+    
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
 </body>
 
 </html>

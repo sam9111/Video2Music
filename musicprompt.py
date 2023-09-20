@@ -1,22 +1,12 @@
-import openai
-import os
-
-
-def generate_prompt(image_descriptions):
-
-    return """in 1 line can you explain music genres instruments bpm suitable for this scene?""" + image_descriptions
-
+from replit.ai.modelfarm import CompletionModel
 
 def generate_music_prompt(image_descriptions):
 
-    openai.api_key = os.environ['OPENAI_API_KEY']
+  model = CompletionModel("text-bison")
+  response = model.complete(["You are a famous music composer. Describe the music (instruments, genre, mood, feel, time signature, bpm, kbps, khz) most suitable for this video, keep it concise:" + image_descriptions], temperature=0.2)
+  
+  result=response.responses[0].choices[0].content
 
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=generate_prompt(image_descriptions),
-        temperature=0.6,
-        max_tokens=60,
-    )
-
-    print("OpenAI Response: ", response)
-    return response['choices'][0]['text']
+  print("Music prompt: ", result)
+  return result
+  
