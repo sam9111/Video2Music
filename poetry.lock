@@ -1230,6 +1230,22 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "replicate"
+version = "0.13.0"
+description = "Python client for Replicate"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+packaging = "*"
+pydantic = ">1"
+requests = ">2"
+
+[package.extras]
+dev = ["black", "mypy", "pytest", "responses", "ruff"]
+
+[[package]]
 name = "replit-ai"
 version = "0.0.11"
 description = "A library for interacting with AI features of replit"
@@ -1769,7 +1785,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "63acda4ecbdefbc584382df6536871626191c389d487cf96090a48c567322f1f"
+content-hash = "66da9a03e4a8a8b5c5c13b1c1169aa75093b20dcabc8a6793824b97550631095"
 
 [metadata.files]
 aiohttp = []
@@ -1874,6 +1890,7 @@ python-lsp-jsonrpc = []
 pywin32-ctypes = []
 pyyaml = []
 regex = []
+replicate = []
 replit-ai = []
 replit-python-lsp-server = []
 requests = []

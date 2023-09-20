@@ -12,6 +12,7 @@ scipy = "1.11.2"
 sentence-transformers = "^2.2.2"
 torch = ">=2.0.0, !=2.0.1"
 replit-ai = "^0.0.11"
+replicate = "^0.13.0"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"

@@ -1,22 +1,22 @@
-
-from transformers import AutoProcessor, MusicgenForConditionalGeneration
-import scipy
+import replicate
+import requests
+from moviepy.editor import *
 
 
 def generate_music(prompt):
-  processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
-  model = MusicgenForConditionalGeneration.from_pretrained(
-    "facebook/musicgen-small")
 
-  inputs = processor(
-    text=prompt,
-    padding=True,
-    return_tensors="pt",
-  )
+  video = VideoFileClip("./static/video.mp4")
+  duration = video.duration
+  video.close()
 
-  audio_values = model.generate(**inputs, max_new_tokens=256)
+  output = replicate.run(
+    "meta/musicgen:7a76a8258b23fae65c5a22debb8841d1d7e816b75c2f24218cd2bd8573787906",
+    input={
+      "model_version": "large",
+      "prompt": prompt,
+      "duration": int(duration),
+    })
 
-  sampling_rate = model.config.audio_encoder.sampling_rate
-  scipy.io.wavfile.write("./static/audio.wav",
-                         rate=sampling_rate,
-                         data=audio_values[0, 0].numpy())
+  response = requests.get(output)
+  with open("./static/audio.wav", 'wb') as f:
+    f.write(response.content)
