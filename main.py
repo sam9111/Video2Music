@@ -3,6 +3,8 @@ from generator import main
 from moviepy.editor import *
 from musicgen import generate_music
 from musicprompt import generate_music_prompt
+import os
+from waitress import serve
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 64 * 1024 * 1024
@@ -77,5 +79,4 @@ def regenerate_music():
   return jsonify({'success': True})
 
 
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=81)
+serve(app, host='0.0.0.0', port=8080)

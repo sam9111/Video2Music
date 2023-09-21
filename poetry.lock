@@ -1716,6 +1716,18 @@ docs = ["furo (>=2023.5.20)", "proselint (>=0.13)", "sphinx-argparse (>=0.4)", "
 test = ["covdefaults (>=2.3)", "coverage-enable-subprocess (>=1)", "coverage (>=7.2.7)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest-env (>=0.8.2)", "pytest-freezer (>=0.4.8)", "pytest-mock (>=3.11.1)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "pytest (>=7.4)", "setuptools (>=68)", "time-machine (>=2.10)"]
 
 [[package]]
+name = "waitress"
+version = "2.1.2"
+description = "Waitress WSGI server"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.extras]
+docs = ["Sphinx (>=1.8.1)", "docutils", "pylons-sphinx-themes (>=1.0.9)"]
+testing = ["pytest", "pytest-cover", "coverage (>=5.0)"]
+
+[[package]]
 name = "webencodings"
 version = "0.5.1"
 description = "Character encoding aliases for legacy web content"
@@ -1785,7 +1797,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "66da9a03e4a8a8b5c5c13b1c1169aa75093b20dcabc8a6793824b97550631095"
+content-hash = "7cbbe7f9368976d3ebbeab2f1d93a6569553fee6521ba9719fc9870d189ba04b"
 
 [metadata.files]
 aiohttp = []
@@ -1921,6 +1933,7 @@ ujson = []
 uritemplate = []
 urllib3 = []
 virtualenv = []
+waitress = []
 webencodings = []
 werkzeug = []
 whatthepatch = []
