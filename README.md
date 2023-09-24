@@ -1,8 +1,5 @@
 # Video2Music
 
-<img src="https://github.com/sam9111/Video2Music/assets/60708693/341e2012-ba31-4774-810e-f1dda7e4f631" width="100" height="100">
-
-
 🎵 Elevate your short videos with Video2Music!🎵
 
 We extract images every 2 seconds, decoding them with InstructBLIP to uncover the story. Then, the Replit ModelFarm Completion model crafts a vivid video description. But that's not all – it doubles as a music prompt generator, specifying instruments, genre, mood, feel, time signature, BPM, kbps, and kHz. Finally, MusicGen by Facebook composes a perfect soundtrack that syncs seamlessly with your video. Redefine your video experience with Video2Music.
