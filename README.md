@@ -2,7 +2,13 @@
 
 🎵 Auto-generate music for your videos!🎵
 
-Elevate your short videos with Video2Music! Frames are extracted every 2 seconds and decoded with InstructBLIP to uncover the story. Then, the Replit ModelFarm Completion model crafts a vivid video description. But that's not all – it doubles as a music prompt generator, specifying instruments, genre, mood, feel, time signature, BPM, and even audio quality. Finally, the MusicGen model by Facebook composes a perfect soundtrack that syncs seamlessly with your video. Redefine your video experience with Video2Music.
+Video2Music is a novel AI-powered tool that can generate music for any short video of max 30 seconds. It is hosted and deployed on Replit, making it easy for anyone to use.
+
+Video2Music works by first extracting images from the video every 2 seconds. It then uses InstructBLIP to identify what is happening in each image. Finally, it uses the Google Text-Bison model to generate an overall description of the video.
+
+This information is then used to prompt the Google Text-Bison model to generate a music prompt of instruments, genre, mood, feel, time signature, BPM, kbps, and kHz suitable for the video. This prompt is then used to generate music for the entire video length using the MusicGen Facebook model.
+
+Video2Music also includes functionality to alter the video description and music prompt generated so that the user can generate the music to their liking.
 
 Note: The audio cannot be used for commercial purposes since the MusicGen model has weights licensed as CC-BY-NC 4.0 (NC = non-commercial)
 
