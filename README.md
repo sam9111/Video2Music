@@ -4,9 +4,9 @@
 
 Video2Music is a novel AI-powered tool that can generate music for any short video of max 30 seconds. It is hosted and deployed on Replit, making it easy for anyone to use.
 
-Video2Music works by first extracting images from the video every 2 seconds. It then uses InstructBLIP to identify what is happening in each image. Finally, it uses the Google Text-Bison model to generate an overall description of the video.
+Video2Music works by first extracting images from the video every 2 seconds. It then uses InstructBLIP to identify what is happening in each image. Finally, it uses the Google Text-Bison model (Replit ModelFarm) to generate an overall description of the video.
 
-This information is then used to prompt the Google Text-Bison model to generate a music prompt of instruments, genre, mood, feel, time signature, BPM, kbps, and kHz suitable for the video. This prompt is then used to generate music for the entire video length using the MusicGen Facebook model.
+This information is then used to prompt the same model to generate a music prompt of instruments, genre, mood, feel, time signature, BPM, kbps, and kHz suitable for the video. This prompt is then used to generate music for the entire video length using the MusicGen Facebook model.
 
 Video2Music also includes functionality to alter the video description and music prompt generated so that the user can generate the music to their liking.
 
