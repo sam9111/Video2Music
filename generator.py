@@ -6,8 +6,8 @@ from musicgen import generate_music
 
 def main():
   
-  images = extract_images("./static/video.mp4")
-  descriptions = describe_images(images)
+  extract_images("./static/video.mp4")
+  descriptions = describe_images()
   music_prompt = generate_music_prompt(descriptions)
   generate_music(music_prompt)
 

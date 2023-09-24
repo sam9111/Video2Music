@@ -48,7 +48,7 @@
             <div class=" max-w-full">
                
                <button type="button"
-                  class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Clear</button>
+                  class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="clear">Clear</button>
                <input type="submit" id="regenerate_music" value="Regenerate Music"
                   class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2" />
           
@@ -56,8 +56,28 @@
          </div>
          </form>
       </div>
+      
+     <footer class="flex mx-auto py-4">
+
+    <a href="https://github.com/your_username/your_project" target="_blank">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github Icon" width="30px" />
+    </a>
+      <a href="https://peerlist.io/samyuktha" target="_blank">
+      <img src="https://peerlist.io/favicon_512.png" alt="Peerlist Icon" width="30px" />
+    </a>
+  
+</footer>
       <script>
          window.onload = function(){
+
+                      document.getElementById("clear").addEventListener("click", function(){
+             //redirect to /
+
+             window.location.href = "/";
+
+
+           }
+                                                             )
            document.querySelector('input[id="regenerate_music"]').addEventListener('click', function(event) {
            event.preventDefault();
            let musicPromptElement = document.querySelector('textarea[id="musicprompt"]');
