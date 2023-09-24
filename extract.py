@@ -6,7 +6,7 @@ from PIL import Image
 def extract_images(video_path):
   video_clip = VideoFileClip(video_path)
 
-  # Remove all files in ./frames
+ 
   folder = './frames'
   for filename in os.listdir(folder):
     file_path = os.path.join(folder, filename)
@@ -16,7 +16,7 @@ def extract_images(video_path):
     except Exception as e:
       print('Failed to delete %s. Reason: %s' % (file_path, e))
 
-  # Save a frame every 2 seconds
+
   for i in range(0, int(video_clip.duration), 2):
     frame = video_clip.get_frame(i)
     new_img = Image.fromarray(frame)

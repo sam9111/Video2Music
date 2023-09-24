@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title></title>
+      <title>V2M</title>
       <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
    </head>
    <body class="flex flex-col  max-h-screen p-8 mx-16 space-y-8 ">
@@ -17,13 +17,13 @@
          </p>
      
       <div class="flex space-x-8" >
-         <!-- Left Video Input -->
+    
          <div class="flex w-1/2 flex-col space-y-8">
             <video id="video" controls autoplay src="{{ url_for('static', filename='combined_video.mp4') }}" ></video>
             <audio id="audio" controls src="{{ url_for('static', filename='audio.wav') }}"></audio>
               
          </div>
-         <!-- Right Video Input -->
+        
          <div class="w-1/2 flex flex-col space-y-8  ">
             <div class="space-y-8">
                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video
@@ -71,7 +71,7 @@
          window.onload = function(){
 
                       document.getElementById("clear").addEventListener("click", function(){
-             //redirect to /
+          
 
              window.location.href = "/";
 
