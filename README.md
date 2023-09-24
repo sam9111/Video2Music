@@ -1,3 +1,4 @@
 # Video2Music
 
-![v2m](https://github.com/sam9111/Video2Music/assets/60708693/22a1d9b4-e087-43a1-878a-8181b6626a30)
+
+![video-to-music-tool](https://github.com/sam9111/Video2Music/assets/60708693/341e2012-ba31-4774-810e-f1dda7e4f631)
