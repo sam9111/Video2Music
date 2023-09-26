@@ -27,6 +27,9 @@ def index():
 @app.route('/upload', methods=['POST', 'GET'])
 def upload_video():
 
+  descriptions=None
+  music_prompt=None
+
   if request.method == 'POST':
     if 'file' not in request.files:
       return jsonify({'error': 'No file part'}), 400
@@ -46,9 +49,6 @@ def upload_video():
     descriptions, music_prompt = main()
 
     combine_video_audio()
-
-    print(descriptions)
-    print(music_prompt)
 
   return render_template('output.html',
                          descriptions=descriptions,
