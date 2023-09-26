@@ -10,7 +10,7 @@ ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov', 'flv', 'wmv'}
 
 
 def combine_video_audio():
-  cmd = "ffmpeg -y -i ./static/video.mp4 -i ./static/audio.wav -c:v copy -c:a aac ./static/combined_video.mp4"
+  cmd = "ffmpeg -y -i ./static/video.mp4 -i ./static/audio.wav -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac ./static/combined_video.mp4"
   os.system(cmd)
 
 
